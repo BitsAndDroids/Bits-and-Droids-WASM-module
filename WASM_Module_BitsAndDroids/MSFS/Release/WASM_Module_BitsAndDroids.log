@@ -177,10 +177,10 @@ C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7214,13): warning : '__stdcall' ca
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7219,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-  In file included from WASM_Module_BitsAndDroids.cpp:13:
+  In file included from WASM_Module_BitsAndDroids.cpp:15:
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(686,15): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/..\MSFS_WindowsTypes.h(123,21): message : expanded from macro 'CALLBACK'
-  In file included from WASM_Module_BitsAndDroids.cpp:13:
+  In file included from WASM_Module_BitsAndDroids.cpp:15:
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(703,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(704,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
@@ -325,16 +325,18 @@ C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(773,1): warning : '__stdcall' ca
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(774,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-WASM_Module_BitsAndDroids.cpp(45,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(51,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(56,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(62,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(133,10): warning : unused variable 'hr' [-Wunused-variable]
-WASM_Module_BitsAndDroids.cpp(169,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+WASM_Module_BitsAndDroids.cpp(47,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(53,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(58,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(64,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(153,10): warning : unused variable 'hr' [-Wunused-variable]
+WASM_Module_BitsAndDroids.cpp(191,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/..\MSFS_WindowsTypes.h(123,21): message : expanded from macro 'CALLBACK'
-WASM_Module_BitsAndDroids.cpp(237,42): warning : format specifies type 'int' but the argument has type 'HRESULT' (aka 'long') [-Wformat]
-WASM_Module_BitsAndDroids.cpp(242,53): warning : format specifies type 'int' but the argument has type 'HRESULT' (aka 'long') [-Wformat]
-WASM_Module_BitsAndDroids.cpp(246,44): warning : format specifies type 'int' but the argument has type 'HRESULT' (aka 'long') [-Wformat]
+WASM_Module_BitsAndDroids.cpp(223,35): warning : format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Wformat]
+WASM_Module_BitsAndDroids.cpp(231,37): warning : format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Wformat]
+WASM_Module_BitsAndDroids.cpp(286,42): warning : format specifies type 'int' but the argument has type 'HRESULT' (aka 'long') [-Wformat]
+WASM_Module_BitsAndDroids.cpp(291,53): warning : format specifies type 'int' but the argument has type 'HRESULT' (aka 'long') [-Wformat]
+WASM_Module_BitsAndDroids.cpp(300,44): warning : format specifies type 'int' but the argument has type 'HRESULT' (aka 'long') [-Wformat]
   In file included from WASM_Module_BitsAndDroids.cpp:4:
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7189,19): warning : unused function 'query_routine_610' [-Wunused-function]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7194,19): warning : unused function 'install_routine_610' [-Wunused-function]
