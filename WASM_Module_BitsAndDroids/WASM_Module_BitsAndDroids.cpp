@@ -7,9 +7,7 @@
 
 #include <iostream>
 #include <map>
-#include <string>
-#include <string>
-#include <string>
+
 #include <vector>
 
 #include "SimConnect.h"
@@ -24,6 +22,7 @@ SIMCONNECT_CLIENT_DATA_ID outputClientDataID = 2;
 DWORD dwSize = 8;
 
 const char* relativeEventFilePath = "modules/events.txt";
+
 struct receivedString
 {
 	char value[256];
@@ -40,8 +39,17 @@ struct SimVar
 	int mode;
 };
 
+struct AxisEvent
+{
+	int ID;
+	std::string name;
+	int minRange;
+	int maxRange;
+};
+
 std::vector<SimVar> SimVars;
 std::map<int, SimVar> inputSimVars;
+std::map<int, AxisEvent> axisEvents;
 
 
 static enum DATA_DEFINE_ID
@@ -70,6 +78,11 @@ static enum GROUP_ID
 double data = 1.;
 double outputData = 1.;
 
+int valueToAxis(float min, float max, int value)
+{
+	return -16383.0 + (16383.0 - -16383.0) * ((value - min) / (max - min));
+}
+
 void readEventFile()
 {
 	std::ifstream file(relativeEventFilePath);
@@ -87,7 +100,7 @@ void readEventFile()
 
 			//String formatting
 			int id = std::stoi(row.substr(prefixDelimiter + 1, 4));
-			float updateEveryRow = std::stof(row.substr(row.find('$') + 1));
+			float updateEveryRow = std::stof(row.substr(row.find('$') + 1, (row.find('/') - row.find('$'))));
 			int mode = std::stoi(row.substr(modeDelimiter + 1, 1));
 			fprintf(stderr, "FLOAT %f", updateEveryRow);
 
@@ -113,6 +126,12 @@ void readEventFile()
 			{
 				std::pair<int, SimVar> inputToAdd = { lineFound.ID, lineFound };
 				inputSimVars.insert(inputToAdd);
+			}
+			else if (lineFound.mode == 9)
+			{
+				int minValue = std::stoi(row.substr(row.find('-') + 1, row.find('+') - row.find('-')));
+				int maxValue = std::stoi(row.substr(row.find('+'), row.find('$') - row.find('+')));
+				axisEvents.insert({ lineFound.ID, {lineFound.ID, lineFound.name, minValue, maxValue} });
 			}
 			else
 			{
@@ -201,24 +220,44 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData, void* pCon
 		std::string stringReceived = (char*)&pObjData->dwData;
 
 		int prefix = std::stoi(stringReceived.substr(0, 4));
-		SimVar receivedSimVar = inputSimVars[prefix];
-		if (prefix == 9999)
+		if (prefix >= 3000 and prefix < 4000)
 		{
-			inputSimVars.clear();
-			SimVars.clear();
-			readEventFile();
-			break;
-		}
-		if (receivedSimVar.mode == 1)
-		{
-			const int value = std::stof(stringReceived.substr(stringReceived.find(" "), std::string::npos));
-			const std::string tempString = std::to_string(value) + " + " + receivedSimVar.name;
+			AxisEvent receivedAxisEvent = axisEvents[prefix];
+			int receivedValue = std::stoi(stringReceived.substr(stringReceived.find(" "), std::string::npos));
+			const int value = valueToAxis(
+				receivedAxisEvent.minRange,
+				receivedAxisEvent.maxRange,
+				receivedValue
+			);
+			const std::string tempString = std::to_string(value) + " + " + receivedAxisEvent.name;
+			fprintf(stderr, "RECEIVED VALUE, %i, AXIS VALUE %i, PREFIX, %i, MIN, %i, MAX, %i", receivedValue, value, prefix, receivedAxisEvent.minRange, receivedAxisEvent.maxRange);
 			execute_calculator_code(tempString.c_str(), nullptr, nullptr, nullptr);
 			break;
+
+
 		}
+		else {
+			SimVar receivedSimVar = inputSimVars[prefix];
+			if (prefix == 9999)
+			{
+				inputSimVars.clear();
+				SimVars.clear();
+				axisEvents.clear();
+				readEventFile();
+				break;
+			}
+			if (receivedSimVar.mode == 1)
+			{
+				const int value = std::stoi(stringReceived.substr(stringReceived.find(" "), std::string::npos));
+				const std::string tempString = std::to_string(value) + " + " + receivedSimVar.name;
+				execute_calculator_code(tempString.c_str(), nullptr, nullptr, nullptr);
+				break;
+			}
+			SimConnect_SetClientData(hInputSimConnect, ClientDataID, 12,
+				SIMCONNECT_CLIENT_DATA_SET_FLAG_DEFAULT, 1, sizeof(data), &data);
 
-		execute_calculator_code(receivedSimVar.name.c_str(), nullptr, nullptr, nullptr);
-
+			execute_calculator_code(receivedSimVar.name.c_str(), nullptr, nullptr, nullptr);
+		}
 		fprintf(stderr, "RECEIVED: %s", stringReceived.c_str());
 		fprintf(stderr, "RECEIVED: %i", pObjData->dwRequestID);
 		break;
@@ -231,8 +270,6 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData, void* pCon
 		fprintf(stderr, "triggeredA. %i", evt->uEventID);
 		switch (evt->uEventID)
 		{
-
-
 		case EVENT_INPUT:
 		{
 			fprintf(stderr, "triggeredB.");
@@ -243,7 +280,6 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData, void* pCon
 			SimVar triggeredSimVar = inputSimVars[evData];
 			if (triggeredSimVar.mode == 1)
 			{
-
 			}
 			execute_calculator_code(triggeredSimVar.name.c_str(), nullptr, nullptr, nullptr);
 
@@ -300,17 +336,15 @@ extern "C" MSFS_CALLBACK void module_init(void)
 		fprintf(stderr, "createClientData = %i", hr);
 
 
-
 		SimConnect_RequestClientData(hInputSimConnect,
 			1,
 			0,
 			12,
 			SIMCONNECT_CLIENT_DATA_PERIOD_ON_SET,
-			SIMCONNECT_CLIENT_DATA_REQUEST_FLAG_CHANGED,
+			SIMCONNECT_CLIENT_DATA_REQUEST_FLAG_DEFAULT,
 			0,
 			0,
 			0);
-
 
 
 		//OUTPUTS
