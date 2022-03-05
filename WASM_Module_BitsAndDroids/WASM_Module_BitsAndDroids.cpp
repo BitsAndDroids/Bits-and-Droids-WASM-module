@@ -14,7 +14,7 @@
 
 
 HRESULT hr;
-HANDLE hInputSimConnect = 0;
+HANDLE hSimConnect = 0;
 SIMCONNECT_CLIENT_DATA_ID ClientDataID = 1;
 SIMCONNECT_CLIENT_DATA_ID outputClientDataID = 2;
 
@@ -67,6 +67,8 @@ static enum EVENT_ID
 {
 	EVENT_INPUT = 1,
 	EVENT_6HZ = 2,
+	EVENT_FLIGHTSTART = 3,
+	EVENT_SIMLOAD = 4
 };
 
 static enum GROUP_ID
@@ -87,6 +89,7 @@ void readEventFile()
 {
 	std::ifstream file(relativeEventFilePath);
 	std::string row;
+	int outputCounter = 0;
 	while (std::getline(file, row))
 	{
 		//This check ensures we don't take in account faulty or empty lines
@@ -114,7 +117,7 @@ void readEventFile()
 
 			SimVar lineFound = {
 				id,
-				sizeof(float) * SimVars.size(),
+				sizeof(float) * outputCounter,
 				rawName,
 				0.0,
 				updateEveryRow,
@@ -136,6 +139,7 @@ void readEventFile()
 			else
 			{
 				SimVars.push_back(lineFound);
+				outputCounter++;
 			}
 
 			//Prints errors but these are just there for debugging purposes
@@ -143,34 +147,18 @@ void readEventFile()
 			fprintf(stderr, "RAW NAME: %s", row.substr(0, modeDelimiter).c_str());
 			fprintf(stderr, "READ %s ID %i", rawName.c_str(), lineFound.ID);
 		}
+
 	}
+
 	file.close();
 	fprintf(stderr, "FILE CLOSED");
 }
-
-
-void registerSimVars()
-{
-	for (auto& simVar : SimVars)
-	{
-		hr = SimConnect_AddToClientDataDefinition(
-			hInputSimConnect,
-			simVar.ID,
-			simVar.offset,
-			sizeof(float),
-			simVar.updateEvery
-		);
-		fprintf(stderr, "Registered > %s ID [%u], offset(%u), value(%f)", simVar.name.c_str(), simVar.ID, simVar.offset,
-			simVar.value);
-	}
-}
-
 void writeSimVar(SimVar& simVar)
 {
 	std::string sendString = std::to_string(simVar.ID) + std::to_string(simVar.value);
 
 	HRESULT hr = SimConnect_SetClientData(
-		hInputSimConnect,
+		hSimConnect,
 		2,
 		simVar.ID,
 		SIMCONNECT_CLIENT_DATA_SET_FLAG_DEFAULT,
@@ -178,33 +166,52 @@ void writeSimVar(SimVar& simVar)
 		sizeof(simVar.value),
 		&simVar.value
 	);
-	fprintf(stderr, "SimVar %s ID %u value %f", simVar.name.c_str(), simVar.ID, simVar.value);
+	fprintf(stderr, "SimVar %s ID %u value %f, offset %i, updateEvery %f", simVar.name.c_str(), simVar.ID, simVar.value, simVar.offset, simVar.updateEvery);
 }
-
-void readSimVar(SimVar& simVar)
+void readSimVar(SimVar& simVar, bool forced)
 {
-	FLOAT64 val = 0;
+	FLOAT64 val = 0.0;
 
 	ENUM test = get_units_enum(simVar.name.c_str());
 	val = get_named_variable_typed_value(check_named_variable(simVar.name.c_str()), test);
 
 	execute_calculator_code(simVar.name.c_str(), &val, nullptr, nullptr);
-
-	if (simVar.value == val) return;
+	if (!forced) {
+		if (simVar.value == val || abs(simVar.value - val) < simVar.updateEvery) return;
+	}
 	simVar.value = val;
-
 	writeSimVar(simVar);
 
 	fprintf(stderr, "SimVar %s ID %u value %f", simVar.name.c_str(), simVar.ID, simVar.value);
 }
 
-void readSimVars()
+void readSimVars(bool forced)
 {
 	for (auto& simVar : SimVars)
 	{
-		readSimVar(simVar);
+		readSimVar(simVar, forced);
 	}
 }
+void registerSimVars()
+{
+	for (auto& simVar : SimVars)
+	{
+		hr = SimConnect_AddToClientDataDefinition(
+			hSimConnect,
+			simVar.ID,
+			simVar.offset,
+			sizeof(float),
+			simVar.updateEvery
+		);
+		fprintf(stderr, "Registered > %s ID [%u], offset(%u), value(%f), updateEvery(%f)", simVar.name.c_str(), simVar.ID, simVar.offset,
+			simVar.value, simVar.updateEvery);
+	}
+	readSimVars(true);
+}
+
+
+
+
 
 
 void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData, void* pContext)
@@ -246,6 +253,12 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData, void* pCon
 				readEventFile();
 				break;
 			}
+			if (prefix == 9998)
+			{
+				fprintf(stderr, "9998 received, resend values");
+				readSimVars(true);
+				break;
+			}
 			if (receivedSimVar.mode == 1)
 			{
 				const int value = std::stoi(stringReceived.substr(stringReceived.find(" "), std::string::npos));
@@ -253,7 +266,7 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData, void* pCon
 				execute_calculator_code(tempString.c_str(), nullptr, nullptr, nullptr);
 				break;
 			}
-			SimConnect_SetClientData(hInputSimConnect, ClientDataID, 12,
+			SimConnect_SetClientData(hSimConnect, ClientDataID, 12,
 				SIMCONNECT_CLIENT_DATA_SET_FLAG_DEFAULT, 1, sizeof(data), &data);
 
 			execute_calculator_code(receivedSimVar.name.c_str(), nullptr, nullptr, nullptr);
@@ -267,12 +280,12 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData, void* pCon
 	{
 		auto evt = static_cast<SIMCONNECT_RECV_EVENT*>(pData);
 		// Detect what event was triggered.
-		fprintf(stderr, "triggeredA. %i", evt->uEventID);
+
 		switch (evt->uEventID)
 		{
 		case EVENT_INPUT:
 		{
-			fprintf(stderr, "triggeredB.");
+
 
 			UINT32 evData = evt->dwData;
 			fprintf(stderr, "Event data number = %i", evData);
@@ -283,15 +296,27 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData, void* pCon
 			}
 			execute_calculator_code(triggeredSimVar.name.c_str(), nullptr, nullptr, nullptr);
 
-			SimConnect_SetClientData(hInputSimConnect, ClientDataID, DEFINITION_1,
+			SimConnect_SetClientData(hSimConnect, ClientDataID, DEFINITION_1,
 				SIMCONNECT_CLIENT_DATA_SET_FLAG_DEFAULT, 1, sizeof(data), &data);
 
 			break;
 		}
 		case EVENT_6HZ:
 		{
-			SimConnect_CallDispatch(hInputSimConnect, myDispatchHandler, NULL);
-			readSimVars();
+			SimConnect_CallDispatch(hSimConnect, myDispatchHandler, NULL);
+			readSimVars(false);
+			break;
+		}
+		case EVENT_FLIGHTSTART:
+		{
+			fprintf(stderr, "New flight loaded, resend values");
+			readSimVars(true);
+			break;
+		}
+		case EVENT_SIMLOAD:
+		{
+			fprintf(stderr, "Sim loaded, resend values");
+			readSimVars(true);
 			break;
 		}
 		default:
@@ -311,14 +336,14 @@ extern "C" MSFS_CALLBACK void module_init(void)
 	//register_key_event_handler((GAUGE_KEY_EVENT_HANDLER)myDispatchHandler, NULL);
 	readEventFile();
 	/* SimConnect_ClientDataArea attempt. */
-	hr = SimConnect_Open(&hInputSimConnect, "incSimConnect", nullptr, 0, 0, 0);
+	hr = SimConnect_Open(&hSimConnect, "incSimConnect", nullptr, 0, 0, 0);
 
 	if (hr == S_OK)
 	{
 		fprintf(stderr, "WASM BitsAndDroids module initialized.");
 
 		// Map an ID to the Client Data Area.dW
-		SimConnect_MapClientDataNameToID(hInputSimConnect, "shared", ClientDataID);
+		SimConnect_MapClientDataNameToID(hSimConnect, "shared", ClientDataID);
 		fprintf(stderr, "mappedDataName = %i", hr);
 
 		// Add a double to the data definition.
@@ -327,16 +352,16 @@ extern "C" MSFS_CALLBACK void module_init(void)
 		fprintf(stderr, "addToClientDataDefinition = %i", hr);
 
 		// Set up a custom Client Data Area.
-		SimConnect_CreateClientData(hInputSimConnect, ClientDataID, 4096,
+		SimConnect_CreateClientData(hSimConnect, ClientDataID, 4096,
 			SIMCONNECT_CLIENT_DATA_REQUEST_FLAG_DEFAULT);
 
-		SimConnect_AddToClientDataDefinition(hInputSimConnect, DEFINITION_1, SIMCONNECT_CLIENTDATAOFFSET_AUTO,
+		SimConnect_AddToClientDataDefinition(hSimConnect, DEFINITION_1, SIMCONNECT_CLIENTDATAOFFSET_AUTO,
 			256, 0);
 
 		fprintf(stderr, "createClientData = %i", hr);
 
 
-		SimConnect_RequestClientData(hInputSimConnect,
+		SimConnect_RequestClientData(hSimConnect,
 			1,
 			0,
 			12,
@@ -349,23 +374,25 @@ extern "C" MSFS_CALLBACK void module_init(void)
 
 		//OUTPUTS
 		registerSimVars();
-		SimConnect_MapClientDataNameToID(hInputSimConnect, "wasm.responses", outputClientDataID);
+		SimConnect_MapClientDataNameToID(hSimConnect, "wasm.responses", outputClientDataID);
 
-		SimConnect_CreateClientData(hInputSimConnect, outputClientDataID, 4096,
+		SimConnect_CreateClientData(hSimConnect, outputClientDataID, 4096,
 			SIMCONNECT_CREATE_CLIENT_DATA_FLAG_DEFAULT);
 
-		SimConnect_AddToClientDataDefinition(hInputSimConnect, DEFINITION_OUTPUT_DATA, SIMCONNECT_CLIENTDATAOFFSET_AUTO,
+		SimConnect_AddToClientDataDefinition(hSimConnect, DEFINITION_OUTPUT_DATA, SIMCONNECT_CLIENTDATAOFFSET_AUTO,
 			256, 0);
 
-		SimConnect_SubscribeToSystemEvent(hInputSimConnect, EVENT_6HZ, "6Hz");
+		SimConnect_SubscribeToSystemEvent(hSimConnect, EVENT_6HZ, "6Hz");
+		SimConnect_SubscribeToSystemEvent(hSimConnect, EVENT_FLIGHTSTART, "FlightLoaded");
+		SimConnect_SubscribeToSystemEvent(hSimConnect, EVENT_SIMLOAD, "SimStart");
 
 
-		SimConnect_CallDispatch(hInputSimConnect, myDispatchHandler, NULL);
+		SimConnect_CallDispatch(hSimConnect, myDispatchHandler, NULL);
 	}
 }
 
 
 extern "C" MSFS_CALLBACK void module_deinit(void)
 {
-	SimConnect_Close(hInputSimConnect);
+	SimConnect_Close(hSimConnect);
 }
