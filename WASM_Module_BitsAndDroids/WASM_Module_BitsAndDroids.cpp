@@ -11,7 +11,10 @@
 #include <vector>
 
 #include "SimConnect.h"
+#include "rapidjson/document.h"
+#include "rapidjson/filereadstream.h"
 
+using namespace rapidjson;
 
 HRESULT hr;
 HANDLE hSimConnect = 0;
@@ -22,6 +25,14 @@ SIMCONNECT_CLIENT_DATA_ID outputClientDataID = 2;
 DWORD dwSize = 8;
 
 const char* relativeEventFilePath = "modules/events.txt";
+const char* relativeJSONEventFilePath = "modules/test_events.json";
+
+struct WASMEvent {
+	uint16_t id;
+	const char* action;
+	const char* comment;
+	bool output;
+};
 
 struct receivedString
 {
@@ -89,6 +100,9 @@ void readEventFile()
 {
 	std::ifstream file(relativeEventFilePath);
 	std::string row;
+
+	
+
 	int outputCounter = 0;
 	while (std::getline(file, row))
 	{
@@ -109,6 +123,7 @@ void readEventFile()
 
 
 			//Get rid of leading space if present
+      fprintf(stderr, "MODE %i", modeasdf);
 			std::string rawName = row.substr(0, modeDelimiter);
 			if (rawName.front() == ' ')
 			{
@@ -151,7 +166,28 @@ void readEventFile()
 	}
 
 	file.close();
-	fprintf(stderr, "FILE CLOSED");
+	FILE* fp = fopen(relativeJSONEventFilePath, "rb");
+	char readBuffer[65536];
+	FileReadStream is(fp, readBuffer, sizeof(readBuffer));
+
+	Document d;
+	d.ParseStream(is);
+	//uint16_t id;
+	//std::string action;
+	//std::string comment;
+	//bool output;
+	WASMEvent event_found = {
+		d["id"].GetInt(),
+		d["action"].GetString(),
+		d["comment"].GetString(),
+		d["output"].GetBool()
+	};
+	fprintf(stderr, "ID IS %i", event_found.id);
+
+	fprintf(stderr, "ACTION IS %s", event_found.action);
+	fprintf(stderr, "COMMENT IS %s", event_found.comment);
+	fprintf(stderr, "OUTPUT IS %s", event_found.output);
+	fclose(fp);
 }
 void writeSimVar(SimVar& simVar)
 {
