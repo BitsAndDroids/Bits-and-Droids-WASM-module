@@ -31,7 +31,10 @@ struct WASMEvent {
 	uint16_t id;
 	const char* action;
 	const char* comment;
-	bool output;
+	const char* type;
+	const char* output_format;
+	FLOAT32 min;
+	FLOAT32 max;
 };
 
 struct receivedString
@@ -123,7 +126,6 @@ void readEventFile()
 
 
 			//Get rid of leading space if present
-      fprintf(stderr, "MODE %i", modeasdf);
 			std::string rawName = row.substr(0, modeDelimiter);
 			if (rawName.front() == ' ')
 			{
@@ -180,13 +182,16 @@ void readEventFile()
 		d["id"].GetInt(),
 		d["action"].GetString(),
 		d["comment"].GetString(),
-		d["output"].GetBool()
+		d["type"].GetString(),
+		d["output_format"].GetString(),
+		d["min"].GetFloat(),
+		d["max"].GetFloat()
 	};
 	fprintf(stderr, "ID IS %i", event_found.id);
 
 	fprintf(stderr, "ACTION IS %s", event_found.action);
 	fprintf(stderr, "COMMENT IS %s", event_found.comment);
-	fprintf(stderr, "OUTPUT IS %s", event_found.output);
+	fprintf(stderr, "OUTPUT IS %s", event_found.type);
 	fclose(fp);
 }
 void writeSimVar(SimVar& simVar)
