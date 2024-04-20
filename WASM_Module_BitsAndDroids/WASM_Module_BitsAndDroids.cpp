@@ -1,9 +1,8 @@
-﻿#include <fstream>
-#include <MSFS/MSFS_WindowsTypes.h>
+﻿#include <MSFS/Legacy/gauges.h>
 #include <MSFS/MSFS.h>
-#include <MSFS/Legacy/gauges.h>
+#include <MSFS/MSFS_WindowsTypes.h>
+#include <fstream>
 #include <unistd.h>
-
 
 #include <iostream>
 #include <map>
@@ -18,23 +17,27 @@ using namespace rapidjson;
 
 HRESULT hr;
 HANDLE hSimConnect = 0;
-SIMCONNECT_CLIENT_DATA_ID ClientDataID = 1;
-SIMCONNECT_CLIENT_DATA_ID outputClientDataID = 2;
 
+SIMCONNECT_CLIENT_DATA_ID clientDataID = 1;
+SIMCONNECT_CLIENT_DATA_ID outputClientDataID = 2;
+SIMCONNECT_CLIENT_DATA_ID commandCLientDataID = 3;
 
 DWORD dwSize = 8;
 
-const char* relativeEventFilePath = "modules/events.txt";
-const char* relativeJSONEventFilePath = "modules/test_events.json";
+const char* relativeJSONEventFilePath = "modules/wasm_events.json";
 
-struct WASMEvent {
-	uint16_t id;
+struct WASMEvent
+{
+	int id;
 	const char* action;
-	const char* comment;
-	const char* type;
+	const char* action_text;
+	const char* action_type;
 	const char* output_format;
+	FLOAT32 update_every;
 	FLOAT32 min;
 	FLOAT32 max;
+	FLOAT64 value;
+	int offset;
 };
 
 struct receivedString
@@ -42,39 +45,17 @@ struct receivedString
 	char value[256];
 };
 
-struct SimVar
-{
-	int ID;
-	int offset;
-	std::string name;
-	float value;
-	float updateEvery;
-	//MODE 0=input 1=setableVariable 2=NonSetableVariable 3=booleanVariable
-	int mode;
-};
-
-struct AxisEvent
-{
-	int ID;
-	std::string name;
-	int minRange;
-	int maxRange;
-};
-
-std::vector<SimVar> SimVars;
-std::map<int, SimVar> inputSimVars;
-std::map<int, AxisEvent> axisEvents;
+std::map<int, WASMEvent> wasmEvents;
+std::map<int, WASMEvent> registeredWASMEvents;
 
 
-static enum DATA_DEFINE_ID
-{
-	DEFINITION_1 = 12,
-	DEFINITION_OUTPUT_DATA = 13
-};
+static enum DATA_DEFINE_ID { DEFINITION_INPUTS = 101, DEFINITION_OUTPUT_DATA = 103, DEFINITION_COMMANDS = 105 };
 
 static enum DATA_REQUEST_ID
 {
-	REQUEST_1 = 10,
+	INPUT_REQUEST_ID = 102,
+	OUTPUT_REQUEST_ID = 104,
+	COMMAND_REQUEST_ID = 106
 };
 
 static enum EVENT_ID
@@ -99,283 +80,287 @@ int valueToAxis(float min, float max, int value)
 	return -16383.0 + (16383.0 - -16383.0) * ((value - min) / (max - min));
 }
 
-void readEventFile()
+void register_event(std::string event_message)
 {
-	std::ifstream file(relativeEventFilePath);
-	std::string row;
-
-	
-
-	int outputCounter = 0;
-	while (std::getline(file, row))
+	Document jsonEvent;
+	if (jsonEvent.Parse(event_message.c_str()).HasParseError())
 	{
-		//This check ensures we don't take in account faulty or empty lines
-		//It also enables us to add headers with the / prefix
-		if (row.size() > 25 && row.at(0) != '/')
-		{
-			//Format of row is command-type#prefix/id(4 chars)$updateEvery(float)
+		fprintf(stderr, "Error converting %s", event_message.c_str());
+		return;
+	}
+	WASMEvent event =
+	{
+		jsonEvent["id"].GetInt(),
+			jsonEvent["action"].GetString(),
+			jsonEvent["action_text"].GetString(),
+			jsonEvent["action_type"].GetString(),
+			jsonEvent["output_format"].GetString(),
+			jsonEvent["update_every"].GetFloat(),
+			jsonEvent["min"].GetFloat(),
+			jsonEvent["max"].GetFloat(),
+			0.0,
+			jsonEvent["offset"].GetInt()
+	};
 
-			int prefixDelimiter = row.find('#');
-			int modeDelimiter = row.find('^');
+	if(strcmp(event.action_type, "output") == 0)
+	{
+		fprintf(stderr, "adding event to outputs %u %s", event.id, event.action);
+		registeredWASMEvents.insert({ event.id, event });
 
-			//String formatting
-			int id = std::stoi(row.substr(prefixDelimiter + 1, 4));
-			float updateEveryRow = std::stof(row.substr(row.find('$') + 1, (row.find('/') - row.find('$'))));
-			int mode = std::stoi(row.substr(modeDelimiter + 1, 1));
-			fprintf(stderr, "FLOAT %f", updateEveryRow);
-
-
-			//Get rid of leading space if present
-			std::string rawName = row.substr(0, modeDelimiter);
-			if (rawName.front() == ' ')
-			{
-				rawName.erase(0, 1);
-			}
-
-			SimVar lineFound = {
-				id,
-				sizeof(float) * outputCounter,
-				rawName,
-				0.0,
-				updateEveryRow,
-				mode
-			};
-
-			//mode 0 + 1 tells us its an input command which doesn't need registering
-			if (lineFound.mode == 0 || lineFound.mode == 1)
-			{
-				std::pair<int, SimVar> inputToAdd = { lineFound.ID, lineFound };
-				inputSimVars.insert(inputToAdd);
-			}
-			else if (lineFound.mode == 9)
-			{
-				int minValue = std::stoi(row.substr(row.find('-') + 1, row.find('+') - row.find('-')));
-				int maxValue = std::stoi(row.substr(row.find('+'), row.find('$') - row.find('+')));
-				axisEvents.insert({ lineFound.ID, {lineFound.ID, lineFound.name, minValue, maxValue} });
-			}
-			else
-			{
-				SimVars.push_back(lineFound);
-				outputCounter++;
-			}
-
-			//Prints errors but these are just there for debugging purposes
-			fprintf(stderr, "RAW LINE: %s", row.c_str());
-			fprintf(stderr, "RAW NAME: %s", row.substr(0, modeDelimiter).c_str());
-			fprintf(stderr, "READ %s ID %i", rawName.c_str(), lineFound.ID);
-		}
-
+		hr = SimConnect_AddToClientDataDefinition(hSimConnect, event.id,
+			event.offset, sizeof(FLOAT64),
+			event.update_every);
+	} else
+	{
+		fprintf(stderr, "adding event to inputs %u", event.id);
+		wasmEvents.insert({ event.id, event });
 	}
 
-	file.close();
+	
+}
+void readEventFile()
+{
 	FILE* fp = fopen(relativeJSONEventFilePath, "rb");
 	char readBuffer[65536];
 	FileReadStream is(fp, readBuffer, sizeof(readBuffer));
 
 	Document d;
-	d.ParseStream(is);
-	//uint16_t id;
-	//std::string action;
-	//std::string comment;
-	//bool output;
-	WASMEvent event_found = {
-		d["id"].GetInt(),
-		d["action"].GetString(),
-		d["comment"].GetString(),
-		d["type"].GetString(),
-		d["output_format"].GetString(),
-		d["min"].GetFloat(),
-		d["max"].GetFloat()
-	};
-	fprintf(stderr, "ID IS %i", event_found.id);
-
-	fprintf(stderr, "ACTION IS %s", event_found.action);
-	fprintf(stderr, "COMMENT IS %s", event_found.comment);
-	fprintf(stderr, "OUTPUT IS %s", event_found.type);
+	if (d.ParseStream(is).HasParseError())
+	{
+		fprintf(stderr, "error parsing json");
+	}
 	fclose(fp);
-}
-void writeSimVar(SimVar& simVar)
-{
-	std::string sendString = std::to_string(simVar.ID) + std::to_string(simVar.value);
 
-	HRESULT hr = SimConnect_SetClientData(
-		hSimConnect,
-		2,
-		simVar.ID,
-		SIMCONNECT_CLIENT_DATA_SET_FLAG_DEFAULT,
-		0,
-		sizeof(simVar.value),
-		&simVar.value
-	);
-	fprintf(stderr, "SimVar %s ID %u value %f, offset %i, updateEvery %f", simVar.name.c_str(), simVar.ID, simVar.value, simVar.offset, simVar.updateEvery);
+	const Value& event_array = d["events"];
+	if (!event_array.IsArray())
+	{
+		fprintf(stderr, "Invalid JSON format - 'events' is not an array");
+	}
+	int event_counter = 0;
+	for (auto& event : event_array.GetArray())
+	{
+		WASMEvent event_found = {
+			event["id"].GetInt(),
+			event["action"].GetString(),
+			event["action_text"].GetString(),
+			event["action_type"].GetString(),
+			event["output_format"].GetString(),
+			event["update_every"].GetFloat(),
+			event["min"].GetFloat(),
+			event["max"].GetFloat(),
+			0.0,
+			sizeof(float) * event_counter
+		};
+		event_counter++;
+		wasmEvents.insert({event_found.id, event_found});
+		fprintf(stderr, "ID IS %i", event_found.id);
+
+		fprintf(stderr, "ACTION IS %s", event_found.action);
+		fprintf(stderr, "COMMENT IS %s", event_found.action_text);
+		fprintf(stderr, "OUTPUT IS %s", event_found.action_type);
+	}
 }
-void readSimVar(SimVar& simVar, bool forced)
+void clear_sim_vars()
+{
+	for (auto& event : registeredWASMEvents)
+	{
+		fprintf(stderr, "unregistering %u", event.second.id);
+		SimConnect_ClearClientDataDefinition(hSimConnect, event.second.id);
+	}
+	
+	wasmEvents.clear();
+
+}
+
+void writeSimVar(WASMEvent& wasm_event)
+{
+
+	HRESULT hr = SimConnect_SetClientData(hSimConnect, 2, wasm_event.id,
+	                                      SIMCONNECT_CLIENT_DATA_SET_FLAG_DEFAULT,
+	                                      0, sizeof(wasm_event.value), &wasm_event.value);
+	fprintf(stderr, "SimVar %s ID %u value %f, offset %i, updateEvery %f",
+	        wasm_event.action, wasm_event.id, wasm_event.value, wasm_event.offset,
+	        wasm_event.update_every);
+}
+
+void readSimVar(WASMEvent& simVar, bool forced)
 {
 	FLOAT64 val = 0.0;
 
-	ENUM test = get_units_enum(simVar.name.c_str());
-	val = get_named_variable_typed_value(check_named_variable(simVar.name.c_str()), test);
+	ENUM test = get_units_enum(simVar.action);
+	val = get_named_variable_typed_value(
+		check_named_variable(simVar.action), test);
 
-	execute_calculator_code(simVar.name.c_str(), &val, nullptr, nullptr);
-	if (!forced) {
-		if (simVar.value == val || abs(simVar.value - val) < simVar.updateEvery) return;
+	execute_calculator_code(simVar.action, &val, nullptr, nullptr);
+	if (!forced)
+	{
+		if (simVar.value == val || abs(simVar.value - val) < simVar.update_every)
+			return;
 	}
 	simVar.value = val;
 	writeSimVar(simVar);
 
-	fprintf(stderr, "SimVar %s ID %u value %f", simVar.name.c_str(), simVar.ID, simVar.value);
+	fprintf(stderr, "SimVar %s ID %u value %f", simVar.action, simVar.id,
+	        simVar.value);
 }
 
 void readSimVars(bool forced)
 {
-	for (auto& simVar : SimVars)
+	for (auto& [key, event] : registeredWASMEvents)
 	{
-		readSimVar(simVar, forced);
+			readSimVar(event, forced);
+		
 	}
 }
-void registerSimVars()
-{
-	for (auto& simVar : SimVars)
-	{
-		hr = SimConnect_AddToClientDataDefinition(
-			hSimConnect,
-			simVar.ID,
-			simVar.offset,
-			sizeof(float),
-			simVar.updateEvery
-		);
-		fprintf(stderr, "Registered > %s ID [%u], offset(%u), value(%f), updateEvery(%f)", simVar.name.c_str(), simVar.ID, simVar.offset,
-			simVar.value, simVar.updateEvery);
-	}
-	readSimVars(true);
-}
 
-
-
-
-
-
-void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData, void* pContext)
+void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData,
+                                void* pContext)
 {
 	// Check for any incoming custom events.
 	DWORD requestID = pData->dwID;
 	switch (requestID)
 	{
 	case SIMCONNECT_RECV_ID_CLIENT_DATA:
-	{
-		fprintf(stderr, "clientData Received ");
-		auto* pObjData = (SIMCONNECT_RECV_CLIENT_DATA*)(pData);
-		std::string stringReceived = (char*)&pObjData->dwData;
-
-		int prefix = std::stoi(stringReceived.substr(0, 4));
-		if (prefix >= 3000 and prefix < 4000)
 		{
-			AxisEvent receivedAxisEvent = axisEvents[prefix];
-			int receivedValue = std::stoi(stringReceived.substr(stringReceived.find(" "), std::string::npos));
-			const int value = valueToAxis(
-				receivedAxisEvent.minRange,
-				receivedAxisEvent.maxRange,
-				receivedValue
-			);
-			const std::string tempString = std::to_string(value) + " + " + receivedAxisEvent.name;
-			fprintf(stderr, "RECEIVED VALUE, %i, AXIS VALUE %i, PREFIX, %i, MIN, %i, MAX, %i", receivedValue, value, prefix, receivedAxisEvent.minRange, receivedAxisEvent.maxRange);
-			execute_calculator_code(tempString.c_str(), nullptr, nullptr, nullptr);
-			break;
-
-
-		}
-		else {
-			SimVar receivedSimVar = inputSimVars[prefix];
-			if (prefix == 9999)
+			fprintf(stderr, "clientData Received ");
+			auto* pObjData = (SIMCONNECT_RECV_CLIENT_DATA*)(pData);
+			std::cout << "received from id: " << pObjData->dwDefineID;
+			fprintf(stderr, "ID OF FOUND CLIENT: %u", pObjData->dwDefineID);
+			std::string stringReceived = (char*)&pObjData->dwData;
+			if(pObjData->dwDefineID == DEFINITION_COMMANDS)
 			{
-				inputSimVars.clear();
-				SimVars.clear();
-				axisEvents.clear();
-				readEventFile();
-				break;
+				if (strcmp(stringReceived.c_str(), "clear") == 0)
+				{
+					clear_sim_vars();
+					return;
+				}
+				fprintf(stderr, "COMMAND RECEIVED %s", stringReceived.c_str());
+				register_event(stringReceived);
+				return;
 			}
-			if (prefix == 9998)
+
+			fprintf(stderr, "received string %s", stringReceived.c_str());
+	
+
+			int prefix = std::stoi(stringReceived.substr(0, 4));
+			auto event_found = wasmEvents.at(prefix);
+			fprintf(stderr, "event_found % i % s %s", event_found.id, event_found.action, event_found.action_type);
+			if (strcmp(event_found.action_type, "input") == 0)
 			{
-				fprintf(stderr, "9998 received, resend values");
-				readSimVars(true);
-				break;
-			}
-			if (receivedSimVar.mode == 1)
-			{
-				const int value = std::stoi(stringReceived.substr(stringReceived.find(" "), std::string::npos));
-				const std::string tempString = std::to_string(value) + " + " + receivedSimVar.name;
+
+				const int value = std::stoi(
+					stringReceived.substr(stringReceived.find(" "), std::string::npos));
+				const std::string tempString =
+					std::to_string(value) + " + " + event_found.action;
 				execute_calculator_code(tempString.c_str(), nullptr, nullptr, nullptr);
 				break;
 			}
-			SimConnect_SetClientData(hSimConnect, ClientDataID, 12,
-				SIMCONNECT_CLIENT_DATA_SET_FLAG_DEFAULT, 1, sizeof(data), &data);
+			else if (strcmp(event_found.action_type, "axis") == 0)
+			{
+				int receivedValue = std::stoi(
+					stringReceived.substr(stringReceived.find(" "), std::string::npos));
+				const int value = valueToAxis(event_found.min,
+				                              event_found.max, receivedValue);
+				const std::string tempString =
+					std::to_string(value) + " + " + event_found.action;
+				fprintf(stderr,
+				        "RECEIVED VALUE, %i, AXIS VALUE %i, PREFIX, %i, MIN, %i, MAX, %i",
+				        receivedValue, value, prefix, event_found.min,
+				        event_found.max);
+				execute_calculator_code(tempString.c_str(), nullptr, nullptr, nullptr);
+				break;
+			}
 
-			execute_calculator_code(receivedSimVar.name.c_str(), nullptr, nullptr, nullptr);
+
+			else if (strcmp(event_found.action_type, "command") == 0)
+			{
+				if (event_found.id == 9999)
+				{
+					wasmEvents.clear();
+					readEventFile();
+					break;
+				}
+				if (prefix == 9998)
+				{
+					fprintf(stderr, "9998 received, resend values");
+					readSimVars(true);
+					break;
+				}
+			}
+
+			SimConnect_SetClientData(hSimConnect, clientDataID, DEFINITION_INPUTS,
+			                         SIMCONNECT_CLIENT_DATA_SET_FLAG_DEFAULT, 1,
+			                         sizeof(data), &data);
+
+			execute_calculator_code(event_found.action, nullptr, nullptr,
+			                        nullptr);
+			fprintf(stderr, "RECEIVED: %s", stringReceived.c_str());
+			fprintf(stderr, "RECEIVED: %i", pObjData->dwRequestID);
+			break;
 		}
-		fprintf(stderr, "RECEIVED: %s", stringReceived.c_str());
-		fprintf(stderr, "RECEIVED: %i", pObjData->dwRequestID);
-		break;
-	}
+
 
 	case SIMCONNECT_RECV_ID_EVENT:
-	{
-		auto evt = static_cast<SIMCONNECT_RECV_EVENT*>(pData);
-		// Detect what event was triggered.
-
-		switch (evt->uEventID)
 		{
-		case EVENT_INPUT:
-		{
+			auto evt = static_cast<SIMCONNECT_RECV_EVENT*>(pData);
+			// Detect what event was triggered.
 
-
-			UINT32 evData = evt->dwData;
-			fprintf(stderr, "Event data number = %i", evData);
-
-			SimVar triggeredSimVar = inputSimVars[evData];
-			if (triggeredSimVar.mode == 1)
+			switch (evt->uEventID)
 			{
+			case EVENT_INPUT:
+				{
+					UINT32 evData = evt->dwData;
+					fprintf(stderr, "Event data number = %i", evData);
+
+					WASMEvent event_found = wasmEvents[evData];
+					if (strcmp(event_found.action_type, "input") == 0)
+					{
+					}
+					execute_calculator_code(event_found.action, nullptr, nullptr,
+					                        nullptr);
+
+					SimConnect_SetClientData(hSimConnect, clientDataID, DEFINITION_INPUTS,
+					                         SIMCONNECT_CLIENT_DATA_SET_FLAG_DEFAULT, 1,
+					                         sizeof(data), &data);
+
+					break;
+				}
+			case EVENT_6HZ:
+				{
+					SimConnect_CallDispatch(hSimConnect, myDispatchHandler, NULL);
+					readSimVars(false);
+					break;
+				}
+			case EVENT_FLIGHTSTART:
+				{
+					fprintf(stderr, "New flight loaded, resend values");
+					readSimVars(true);
+					break;
+				}
+			case EVENT_SIMLOAD:
+				{
+					fprintf(stderr, "Sim loaded, resend values");
+					readSimVars(true);
+					break;
+				}
+			default:
+				{
+					// No default for now.
+					break;
+				}
 			}
-			execute_calculator_code(triggeredSimVar.name.c_str(), nullptr, nullptr, nullptr);
-
-			SimConnect_SetClientData(hSimConnect, ClientDataID, DEFINITION_1,
-				SIMCONNECT_CLIENT_DATA_SET_FLAG_DEFAULT, 1, sizeof(data), &data);
-
-			break;
 		}
-		case EVENT_6HZ:
-		{
-			SimConnect_CallDispatch(hSimConnect, myDispatchHandler, NULL);
-			readSimVars(false);
-			break;
-		}
-		case EVENT_FLIGHTSTART:
-		{
-			fprintf(stderr, "New flight loaded, resend values");
-			readSimVars(true);
-			break;
-		}
-		case EVENT_SIMLOAD:
-		{
-			fprintf(stderr, "Sim loaded, resend values");
-			readSimVars(true);
-			break;
-		}
-		default:
-		{
-			// No default for now.
-			break;
-		}
-		}
-	}
 	}
 }
+
 
 
 // This is called when the WASM is loaded into the system.
 extern "C" MSFS_CALLBACK void module_init(void)
 {
-	//register_key_event_handler((GAUGE_KEY_EVENT_HANDLER)myDispatchHandler, NULL);
-	readEventFile();
+	// register_key_event_handler((GAUGE_KEY_EVENT_HANDLER)myDispatchHandler,
+	// NULL);
+	
 	/* SimConnect_ClientDataArea attempt. */
 	hr = SimConnect_Open(&hSimConnect, "incSimConnect", nullptr, 0, 0, 0);
 
@@ -384,54 +369,55 @@ extern "C" MSFS_CALLBACK void module_init(void)
 		fprintf(stderr, "WASM BitsAndDroids module initialized.");
 
 		// Map an ID to the Client Data Area.dW
-		SimConnect_MapClientDataNameToID(hSimConnect, "shared", ClientDataID);
+		SimConnect_MapClientDataNameToID(hSimConnect, "shared", clientDataID);
 		fprintf(stderr, "mappedDataName = %i", hr);
 
 		// Add a double to the data definition.
 
-
 		fprintf(stderr, "addToClientDataDefinition = %i", hr);
 
 		// Set up a custom Client Data Area.
-		SimConnect_CreateClientData(hSimConnect, ClientDataID, 4096,
-			SIMCONNECT_CLIENT_DATA_REQUEST_FLAG_DEFAULT);
+		SimConnect_CreateClientData(hSimConnect, clientDataID, 4096,
+		                            SIMCONNECT_CLIENT_DATA_REQUEST_FLAG_DEFAULT);
 
-		SimConnect_AddToClientDataDefinition(hSimConnect, DEFINITION_1, SIMCONNECT_CLIENTDATAOFFSET_AUTO,
-			256, 0);
+		SimConnect_AddToClientDataDefinition(
+			hSimConnect, DEFINITION_INPUTS, SIMCONNECT_CLIENTDATAOFFSET_AUTO, 256, 0);
 
 		fprintf(stderr, "createClientData = %i", hr);
 
-
-		SimConnect_RequestClientData(hSimConnect,
-			1,
-			0,
-			12,
-			SIMCONNECT_CLIENT_DATA_PERIOD_ON_SET,
-			SIMCONNECT_CLIENT_DATA_REQUEST_FLAG_DEFAULT,
-			0,
-			0,
-			0);
+		SimConnect_RequestClientData(
+			hSimConnect, clientDataID, INPUT_REQUEST_ID, DEFINITION_INPUTS, SIMCONNECT_CLIENT_DATA_PERIOD_ON_SET,
+			SIMCONNECT_CLIENT_DATA_REQUEST_FLAG_DEFAULT, 0, 0, 0);
 
 
-		//OUTPUTS
-		registerSimVars();
-		SimConnect_MapClientDataNameToID(hSimConnect, "wasm.responses", outputClientDataID);
+		SimConnect_MapClientDataNameToID(hSimConnect, "messages",
+		                                 outputClientDataID);
 
 		SimConnect_CreateClientData(hSimConnect, outputClientDataID, 4096,
-			SIMCONNECT_CREATE_CLIENT_DATA_FLAG_DEFAULT);
+		                            SIMCONNECT_CREATE_CLIENT_DATA_FLAG_DEFAULT);
 
-		SimConnect_AddToClientDataDefinition(hSimConnect, DEFINITION_OUTPUT_DATA, SIMCONNECT_CLIENTDATAOFFSET_AUTO,
-			256, 0);
+		SimConnect_AddToClientDataDefinition(hSimConnect, DEFINITION_OUTPUT_DATA,
+		                                     SIMCONNECT_CLIENTDATAOFFSET_AUTO, 256,
+		                                     0);
+
+		// COMMANDS
+		SimConnect_MapClientDataNameToID(hSimConnect, "command_client", commandCLientDataID);
+		SimConnect_CreateClientData(hSimConnect, commandCLientDataID, 4096, SIMCONNECT_CLIENT_DATA_REQUEST_FLAG_DEFAULT);
+		SimConnect_AddToClientDataDefinition(
+			hSimConnect, DEFINITION_COMMANDS, 0, 4096, 0);
+		SimConnect_RequestClientData(hSimConnect, commandCLientDataID, COMMAND_REQUEST_ID, DEFINITION_COMMANDS, SIMCONNECT_CLIENT_DATA_PERIOD_ON_SET, SIMCONNECT_CLIENT_DATA_REQUEST_FLAG_CHANGED, 0, 0, 0);
 
 		SimConnect_SubscribeToSystemEvent(hSimConnect, EVENT_6HZ, "6Hz");
-		SimConnect_SubscribeToSystemEvent(hSimConnect, EVENT_FLIGHTSTART, "FlightLoaded");
+		SimConnect_SubscribeToSystemEvent(hSimConnect, EVENT_FLIGHTSTART,
+		                                  "FlightLoaded");
 		SimConnect_SubscribeToSystemEvent(hSimConnect, EVENT_SIMLOAD, "SimStart");
 
-
 		SimConnect_CallDispatch(hSimConnect, myDispatchHandler, NULL);
+
+		readEventFile();
+		
 	}
 }
-
 
 extern "C" MSFS_CALLBACK void module_deinit(void)
 {
