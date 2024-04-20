@@ -54,14 +54,11 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|MSFS'">
     <ClCompile>
-      <WarningLevel>
-      </WarningLevel>
-      <Optimization>
-      </Optimization>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
       <SDLCheck>
       </SDLCheck>
-      <ConformanceMode>
-      </ConformanceMode>
+      <ConformanceMode>true</ConformanceMode>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <AdditionalIncludeDirectories>
       </AdditionalIncludeDirectories>
@@ -76,7 +73,8 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <BasicRuntimeChecks>
       </BasicRuntimeChecks>
-      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard>Default</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -90,7 +88,6 @@
       </RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>
       </ProgramDatabaseFile>
       <ImportLibrary>
@@ -98,6 +95,7 @@
       <ProfileGuidedDatabase>
       </ProfileGuidedDatabase>
       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -148,7 +146,11 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="WASM_Module_BitsAndDroids.cpp" />
+    <ClCompile Include="WASM_Module_BitsAndDroids.cpp">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|MSFS'">_DEBUG;_MSFS_WASM;_STRING_H_CPLUSPLUS_98_CONFORMANCE_;_WCHAR_H_CPLUSPLUS_98_CONFORMANCE_;_LIBCPP_NO_EXCEPTIONS;_LIBCPP_HAS_NO_THREADS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Debug|MSFS'">false</ExceptionHandling>
+      <ConformanceMode Condition="'$(Configuration)|$(Platform)'=='Debug|MSFS'">true</ConformanceMode>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WASM_Module_BitsAndDroids.h" />
