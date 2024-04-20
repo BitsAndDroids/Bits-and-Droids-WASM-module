@@ -29,10 +29,10 @@ const char* relativeJSONEventFilePath = "modules/wasm_events.json";
 struct WASMEvent
 {
 	int id;
-	const char* action;
-	const char* action_text;
-	const char* action_type;
-	const char* output_format;
+	std::string action;
+	std::string action_text;
+	std::string action_type;
+	std::string output_format;
 	FLOAT32 update_every;
 	FLOAT32 min;
 	FLOAT32 max;
@@ -102,9 +102,9 @@ void register_event(std::string event_message)
 			jsonEvent["offset"].GetInt()
 	};
 
-	if(strcmp(event.action_type, "output") == 0)
+	if(event.action_type == "output")
 	{
-		fprintf(stderr, "adding event to outputs %u %s", event.id, event.action);
+		std::cout << "Adding event to outputs " << event.id << " " << event.action.c_str() << std::endl;
 		registeredWASMEvents.insert({ event.id, event });
 
 		hr = SimConnect_AddToClientDataDefinition(hSimConnect, event.id,
@@ -112,7 +112,7 @@ void register_event(std::string event_message)
 			event.update_every);
 	} else
 	{
-		fprintf(stderr, "adding event to inputs %u", event.id);
+		std::cout << "Adding event to inputs " << event.id << " " << event.action.c_str() << std::endl;
 		wasmEvents.insert({ event.id, event });
 	}
 
@@ -120,6 +120,7 @@ void register_event(std::string event_message)
 }
 void readEventFile()
 {
+	std::cout << "reading event file" << std::endl;
 	FILE* fp = fopen(relativeJSONEventFilePath, "rb");
 	char readBuffer[65536];
 	FileReadStream is(fp, readBuffer, sizeof(readBuffer));
@@ -127,7 +128,7 @@ void readEventFile()
 	Document d;
 	if (d.ParseStream(is).HasParseError())
 	{
-		fprintf(stderr, "error parsing json");
+		fprintf(stderr, "Error parsing input event json");
 	}
 	fclose(fp);
 
@@ -137,7 +138,7 @@ void readEventFile()
 		fprintf(stderr, "Invalid JSON format - 'events' is not an array");
 	}
 	int event_counter = 0;
-	for (auto& event : event_array.GetArray())
+	for (const Value& event : event_array.GetArray())
 	{
 		WASMEvent event_found = {
 			event["id"].GetInt(),
@@ -152,24 +153,21 @@ void readEventFile()
 			sizeof(float) * event_counter
 		};
 		event_counter++;
+		if(event_found.action_type != "input")
+		{
+			return;
+		}
 		wasmEvents.insert({event_found.id, event_found});
-		fprintf(stderr, "ID IS %i", event_found.id);
-
-		fprintf(stderr, "ACTION IS %s", event_found.action);
-		fprintf(stderr, "COMMENT IS %s", event_found.action_text);
-		fprintf(stderr, "OUTPUT IS %s", event_found.action_type);
+		std::cout << "Added event: " << event_found.id << " " << event_found.action << " as output" << std::endl;
 	}
 }
 void clear_sim_vars()
 {
 	for (auto& event : registeredWASMEvents)
 	{
-		fprintf(stderr, "unregistering %u", event.second.id);
+		std::cout << "Unregistering event_id: " << event.second.id << std::endl;
 		SimConnect_ClearClientDataDefinition(hSimConnect, event.second.id);
 	}
-	
-	wasmEvents.clear();
-
 }
 
 void writeSimVar(WASMEvent& wasm_event)
@@ -178,38 +176,34 @@ void writeSimVar(WASMEvent& wasm_event)
 	HRESULT hr = SimConnect_SetClientData(hSimConnect, 2, wasm_event.id,
 	                                      SIMCONNECT_CLIENT_DATA_SET_FLAG_DEFAULT,
 	                                      0, sizeof(wasm_event.value), &wasm_event.value);
-	fprintf(stderr, "SimVar %s ID %u value %f, offset %i, updateEvery %f",
-	        wasm_event.action, wasm_event.id, wasm_event.value, wasm_event.offset,
-	        wasm_event.update_every);
+	std::cout << "Set id: " << wasm_event.id << " | value: " << wasm_event.value << std::endl;
 }
 
 void readSimVar(WASMEvent& simVar, bool forced)
 {
 	FLOAT64 val = 0.0;
 
-	ENUM test = get_units_enum(simVar.action);
+	ENUM test = get_units_enum(simVar.action.c_str());
 	val = get_named_variable_typed_value(
-		check_named_variable(simVar.action), test);
+		check_named_variable(simVar.action.c_str()), test);
 
-	execute_calculator_code(simVar.action, &val, nullptr, nullptr);
+	execute_calculator_code(simVar.action.c_str(), &val, nullptr, nullptr);
 	if (!forced)
 	{
 		if (simVar.value == val || abs(simVar.value - val) < simVar.update_every)
+		{
 			return;
+		}
 	}
 	simVar.value = val;
 	writeSimVar(simVar);
-
-	fprintf(stderr, "SimVar %s ID %u value %f", simVar.action, simVar.id,
-	        simVar.value);
 }
 
 void readSimVars(bool forced)
 {
-	for (auto& [key, event] : registeredWASMEvents)
+	for (auto it = registeredWASMEvents.begin(); it != registeredWASMEvents.end(); ++it)
 	{
-			readSimVar(event, forced);
-		
+			readSimVar(it->second, forced);
 	}
 }
 
@@ -222,10 +216,7 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData,
 	{
 	case SIMCONNECT_RECV_ID_CLIENT_DATA:
 		{
-			fprintf(stderr, "clientData Received ");
 			auto* pObjData = (SIMCONNECT_RECV_CLIENT_DATA*)(pData);
-			std::cout << "received from id: " << pObjData->dwDefineID;
-			fprintf(stderr, "ID OF FOUND CLIENT: %u", pObjData->dwDefineID);
 			std::string stringReceived = (char*)&pObjData->dwData;
 			if(pObjData->dwDefineID == DEFINITION_COMMANDS)
 			{
@@ -234,28 +225,31 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData,
 					clear_sim_vars();
 					return;
 				}
-				fprintf(stderr, "COMMAND RECEIVED %s", stringReceived.c_str());
+				std::cout<< "COMMAND RECEIVED: " << stringReceived << std::endl;
 				register_event(stringReceived);
 				return;
 			}
 
-			fprintf(stderr, "received string %s", stringReceived.c_str());
-	
-
 			int prefix = std::stoi(stringReceived.substr(0, 4));
-			auto event_found = wasmEvents.at(prefix);
-			fprintf(stderr, "event_found % i % s %s", event_found.id, event_found.action, event_found.action_type);
-			if (strcmp(event_found.action_type, "input") == 0)
+			auto event_it = wasmEvents.find(prefix);
+			if (event_it == wasmEvents.end())
 			{
+				fprintf(stderr, "could not find event: %u", prefix);
+				return;
+			}
+			auto event_found = event_it->second;
 
+			if (event_found.action_type == "input")
+			{
 				const int value = std::stoi(
 					stringReceived.substr(stringReceived.find(" "), std::string::npos));
 				const std::string tempString =
 					std::to_string(value) + " + " + event_found.action;
+				std::cout << "Input id: " << event_found.id << " | Value: " << value << std::endl;
 				execute_calculator_code(tempString.c_str(), nullptr, nullptr, nullptr);
 				break;
 			}
-			else if (strcmp(event_found.action_type, "axis") == 0)
+			else if (event_found.action_type == "axis")
 			{
 				int receivedValue = std::stoi(
 					stringReceived.substr(stringReceived.find(" "), std::string::npos));
@@ -263,16 +257,12 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData,
 				                              event_found.max, receivedValue);
 				const std::string tempString =
 					std::to_string(value) + " + " + event_found.action;
-				fprintf(stderr,
-				        "RECEIVED VALUE, %i, AXIS VALUE %i, PREFIX, %i, MIN, %i, MAX, %i",
-				        receivedValue, value, prefix, event_found.min,
-				        event_found.max);
 				execute_calculator_code(tempString.c_str(), nullptr, nullptr, nullptr);
 				break;
 			}
 
 
-			else if (strcmp(event_found.action_type, "command") == 0)
+			else if (event_found.action_type == "command")
 			{
 				if (event_found.id == 9999)
 				{
@@ -282,7 +272,6 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData,
 				}
 				if (prefix == 9998)
 				{
-					fprintf(stderr, "9998 received, resend values");
 					readSimVars(true);
 					break;
 				}
@@ -292,10 +281,8 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData,
 			                         SIMCONNECT_CLIENT_DATA_SET_FLAG_DEFAULT, 1,
 			                         sizeof(data), &data);
 
-			execute_calculator_code(event_found.action, nullptr, nullptr,
+			execute_calculator_code(event_found.action.c_str(), nullptr, nullptr,
 			                        nullptr);
-			fprintf(stderr, "RECEIVED: %s", stringReceived.c_str());
-			fprintf(stderr, "RECEIVED: %i", pObjData->dwRequestID);
 			break;
 		}
 
@@ -310,13 +297,12 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData,
 			case EVENT_INPUT:
 				{
 					UINT32 evData = evt->dwData;
-					fprintf(stderr, "Event data number = %i", evData);
 
 					WASMEvent event_found = wasmEvents[evData];
-					if (strcmp(event_found.action_type, "input") == 0)
+					if (event_found.action_type.c_str() == "input")
 					{
 					}
-					execute_calculator_code(event_found.action, nullptr, nullptr,
+					execute_calculator_code(event_found.action.c_str(), nullptr, nullptr,
 					                        nullptr);
 
 					SimConnect_SetClientData(hSimConnect, clientDataID, DEFINITION_INPUTS,
@@ -333,13 +319,13 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData,
 				}
 			case EVENT_FLIGHTSTART:
 				{
-					fprintf(stderr, "New flight loaded, resend values");
+					std::cout << "New flight loaded, resend values" << std::endl;
 					readSimVars(true);
 					break;
 				}
 			case EVENT_SIMLOAD:
 				{
-					fprintf(stderr, "Sim loaded, resend values");
+				    std::cout << "Sim loaded, resend values" << std::endl;
 					readSimVars(true);
 					break;
 				}
@@ -366,16 +352,11 @@ extern "C" MSFS_CALLBACK void module_init(void)
 
 	if (hr == S_OK)
 	{
-		fprintf(stderr, "WASM BitsAndDroids module initialized.");
+	std::cout <<  "WASM BitsAndDroids module initialized" <<  std::endl;
 
 		// Map an ID to the Client Data Area.dW
 		SimConnect_MapClientDataNameToID(hSimConnect, "shared", clientDataID);
-		fprintf(stderr, "mappedDataName = %i", hr);
-
-		// Add a double to the data definition.
-
-		fprintf(stderr, "addToClientDataDefinition = %i", hr);
-
+		
 		// Set up a custom Client Data Area.
 		SimConnect_CreateClientData(hSimConnect, clientDataID, 4096,
 		                            SIMCONNECT_CLIENT_DATA_REQUEST_FLAG_DEFAULT);
@@ -383,7 +364,6 @@ extern "C" MSFS_CALLBACK void module_init(void)
 		SimConnect_AddToClientDataDefinition(
 			hSimConnect, DEFINITION_INPUTS, SIMCONNECT_CLIENTDATAOFFSET_AUTO, 256, 0);
 
-		fprintf(stderr, "createClientData = %i", hr);
 
 		SimConnect_RequestClientData(
 			hSimConnect, clientDataID, INPUT_REQUEST_ID, DEFINITION_INPUTS, SIMCONNECT_CLIENT_DATA_PERIOD_ON_SET,
@@ -400,6 +380,8 @@ extern "C" MSFS_CALLBACK void module_init(void)
 		                                     SIMCONNECT_CLIENTDATAOFFSET_AUTO, 256,
 		                                     0);
 
+		readEventFile();
+
 		// COMMANDS
 		SimConnect_MapClientDataNameToID(hSimConnect, "command_client", commandCLientDataID);
 		SimConnect_CreateClientData(hSimConnect, commandCLientDataID, 4096, SIMCONNECT_CLIENT_DATA_REQUEST_FLAG_DEFAULT);
@@ -414,7 +396,7 @@ extern "C" MSFS_CALLBACK void module_init(void)
 
 		SimConnect_CallDispatch(hSimConnect, myDispatchHandler, NULL);
 
-		readEventFile();
+		
 		
 	}
 }
