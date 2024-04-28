@@ -115,52 +115,8 @@ void register_event(std::string event_message)
 		std::cout << "Adding event to inputs " << event.id << " " << event.action.c_str() << std::endl;
 		wasmEvents.insert({ event.id, event });
 	}
-
-	
 }
-void readEventFile()
-{
-	std::cout << "reading event file" << std::endl;
-	FILE* fp = fopen(relativeJSONEventFilePath, "rb");
-	char readBuffer[65536];
-	FileReadStream is(fp, readBuffer, sizeof(readBuffer));
 
-	Document d;
-	if (d.ParseStream(is).HasParseError())
-	{
-		fprintf(stderr, "Error parsing input event json");
-	}
-	fclose(fp);
-
-	const Value& event_array = d["events"];
-	if (!event_array.IsArray())
-	{
-		fprintf(stderr, "Invalid JSON format - 'events' is not an array");
-	}
-	int event_counter = 0;
-	for (const Value& event : event_array.GetArray())
-	{
-		WASMEvent event_found = {
-			event["id"].GetInt(),
-			event["action"].GetString(),
-			event["action_text"].GetString(),
-			event["action_type"].GetString(),
-			event["output_format"].GetString(),
-			event["update_every"].GetFloat(),
-			event["min"].GetFloat(),
-			event["max"].GetFloat(),
-			0.0,
-			sizeof(float) * event_counter
-		};
-		event_counter++;
-		if(event_found.action_type != "input")
-		{
-			return;
-		}
-		wasmEvents.insert({event_found.id, event_found});
-		std::cout << "Added event: " << event_found.id << " " << event_found.action << " as output" << std::endl;
-	}
-}
 void clear_sim_vars()
 {
 	for (auto& event : registeredWASMEvents)
@@ -267,7 +223,6 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData,
 				if (event_found.id == 9999)
 				{
 					wasmEvents.clear();
-					readEventFile();
 					break;
 				}
 				if (prefix == 9998)
@@ -379,8 +334,6 @@ extern "C" MSFS_CALLBACK void module_init(void)
 		SimConnect_AddToClientDataDefinition(hSimConnect, DEFINITION_OUTPUT_DATA,
 		                                     SIMCONNECT_CLIENTDATAOFFSET_AUTO, 256,
 		                                     0);
-
-		readEventFile();
 
 		// COMMANDS
 		SimConnect_MapClientDataNameToID(hSimConnect, "command_client", commandCLientDataID);
