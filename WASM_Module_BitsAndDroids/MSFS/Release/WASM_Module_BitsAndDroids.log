@@ -1,348 +1,388 @@
 ﻿  WASM_Module_BitsAndDroids.cpp
-  In file included from WASM_Module_BitsAndDroids.cpp:4:
+  In file included from WASM_Module_BitsAndDroids.cpp:1:
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(118,9): warning : 'UINT8_MAX' macro redefined [-Wmacro-redefined]
-C:\MSFS SDK\WASM\wasi-sysroot\include\stdint.h(48,9): message : previous definition is here
-  In file included from WASM_Module_BitsAndDroids.cpp:4:
+C:\MSFS SDK\WASM\wasi-sysroot/include\stdint.h(48,9): message : previous definition is here
+  In file included from WASM_Module_BitsAndDroids.cpp:1:
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(124,9): warning : 'UINT16_MAX' macro redefined [-Wmacro-redefined]
-C:\MSFS SDK\WASM\wasi-sysroot\include\stdint.h(49,9): message : previous definition is here
-  In file included from WASM_Module_BitsAndDroids.cpp:4:
+C:\MSFS SDK\WASM\wasi-sysroot/include\stdint.h(49,9): message : previous definition is here
+  In file included from WASM_Module_BitsAndDroids.cpp:1:
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(130,9): warning : 'UINT32_MAX' macro redefined [-Wmacro-redefined]
-C:\MSFS SDK\WASM\wasi-sysroot\include\stdint.h(50,9): message : previous definition is here
-  In file included from WASM_Module_BitsAndDroids.cpp:4:
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(5938,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\wasi-sysroot/include\stdint.h(50,9): message : previous definition is here
+  In file included from WASM_Module_BitsAndDroids.cpp:1:
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6116,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(5941,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6119,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6158,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6336,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6161,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6339,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6164,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6342,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6167,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6345,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6170,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6348,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6173,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6351,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6176,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6354,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6179,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6357,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6283,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6461,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6286,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6464,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6289,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6467,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6292,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6470,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6295,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6473,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6298,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6476,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6878,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7056,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6991,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7169,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6992,5): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7170,5): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6993,12): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7171,12): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7023,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7201,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7024,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7202,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7025,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7203,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7026,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7204,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7027,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7205,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7028,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7206,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7029,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7207,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7030,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7208,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7031,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7209,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7032,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7210,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7033,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7211,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7034,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7212,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7035,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7213,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7036,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7214,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7037,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7217,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7038,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7218,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7039,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7219,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7040,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7220,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7041,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7221,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7042,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7222,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7043,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7223,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7044,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7224,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7045,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7225,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7046,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7226,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7047,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7227,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7048,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7228,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7049,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7229,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7050,5): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7230,5): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7051,5): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7231,5): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7052,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7232,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7053,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7233,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7054,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7234,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7055,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7235,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7056,12): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7236,12): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7057,12): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7237,12): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7058,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7238,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7059,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7239,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7060,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7240,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7061,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7241,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7062,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7242,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7063,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7243,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7064,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7244,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7065,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7245,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7066,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7246,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7067,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7247,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7068,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7248,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7069,19): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7249,19): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7070,22): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7250,22): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7071,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7253,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7072,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7256,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7073,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7259,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7074,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7260,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7075,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7261,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7247,2): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7014,38): message : expanded from macro 'FSLINKAGE'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7263,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7247,2): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7015,38): message : expanded from macro 'FSLINKAGE'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7264,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7255,10): warning : __declspec attribute 'dllexport' is not supported [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7265,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7437,2): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7192,38): message : expanded from macro 'FSLINKAGE'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7437,2): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7193,38): message : expanded from macro 'FSLINKAGE'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7445,10): warning : __declspec attribute 'dllexport' is not supported [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(33,36): message : expanded from macro 'DECLSPEC_EXPORT'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7260,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7450,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7265,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7455,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7270,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7460,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7275,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7465,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7280,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7470,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7285,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7475,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7290,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7480,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-  In file included from WASM_Module_BitsAndDroids.cpp:13:
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(686,15): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/..\MSFS_WindowsTypes.h(123,21): message : expanded from macro 'CALLBACK'
-  In file included from WASM_Module_BitsAndDroids.cpp:13:
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(703,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(704,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(705,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(706,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(707,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(708,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(709,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(710,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(711,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(712,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(713,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(714,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(715,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(716,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(717,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(718,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(719,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(720,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(721,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(722,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(723,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(724,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(725,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(726,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(727,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(728,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(729,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(730,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(731,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(732,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(733,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(734,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(735,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(736,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(737,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(738,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(739,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(740,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(741,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(742,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(743,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(744,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(745,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(746,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(747,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(748,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(749,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(750,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(751,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(752,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(753,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(754,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(755,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(756,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(757,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(758,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(759,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(760,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(761,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(762,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(763,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(764,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(765,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(766,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(767,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(768,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(769,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(770,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(771,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(772,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(773,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(774,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(699,44): message : expanded from macro 'SIMCONNECTAPI'
-WASM_Module_BitsAndDroids.cpp(55,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+  In file included from WASM_Module_BitsAndDroids.cpp:12:
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(905,15): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/MSFS_WindowsTypes.h(129,21): message : expanded from macro 'CALLBACK'
+  In file included from WASM_Module_BitsAndDroids.cpp:12:
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(907,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(908,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(909,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(910,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(911,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(912,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(913,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(914,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(915,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(916,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(917,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(918,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(919,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(920,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(921,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(922,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(923,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(924,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(925,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(926,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(927,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(928,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(929,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(930,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(931,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(932,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(933,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(934,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(935,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(936,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(937,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(938,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(939,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(940,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(941,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(942,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(943,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(944,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(945,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(946,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(947,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(948,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(949,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(950,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(951,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(952,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(953,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(954,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(955,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(956,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(957,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(958,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(959,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(960,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(961,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(962,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(963,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(964,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(965,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(966,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(967,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(968,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(969,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(970,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(971,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(972,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(973,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(974,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(975,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(976,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(977,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(978,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(979,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(980,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(981,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(982,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(983,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(984,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(985,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(986,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(987,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(988,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(989,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(990,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(991,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(992,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(993,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(994,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(995,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(996,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(997,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
+WASM_Module_BitsAndDroids.cpp(52,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(54,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
 WASM_Module_BitsAndDroids.cpp(61,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(66,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(72,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(172,10): warning : unused variable 'hr' [-Wunused-variable]
-WASM_Module_BitsAndDroids.cpp(210,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/..\MSFS_WindowsTypes.h(123,21): message : expanded from macro 'CALLBACK'
-WASM_Module_BitsAndDroids.cpp(262,35): warning : format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Wformat]
-WASM_Module_BitsAndDroids.cpp(270,37): warning : format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Wformat]
-WASM_Module_BitsAndDroids.cpp(322,42): warning : format specifies type 'int' but the argument has type 'HRESULT' (aka 'long') [-Wformat]
-WASM_Module_BitsAndDroids.cpp(327,53): warning : format specifies type 'int' but the argument has type 'HRESULT' (aka 'long') [-Wformat]
-WASM_Module_BitsAndDroids.cpp(336,44): warning : format specifies type 'int' but the argument has type 'HRESULT' (aka 'long') [-Wformat]
-  In file included from WASM_Module_BitsAndDroids.cpp:4:
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7260,19): warning : unused function 'query_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7265,19): warning : unused function 'install_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7270,19): warning : unused function 'initialize_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7275,19): warning : unused function 'update_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7280,19): warning : unused function 'generate_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7285,19): warning : unused function 'draw_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7290,19): warning : unused function 'kill_routine_610' [-Wunused-function]
-  WASM_Module_BitsAndDroids.vcxproj -> C:\Users\Dave Riedel\source\repos\WASM_Module_BitsAndDroids\MSFS\Release\WASM_Module_BitsAndDroids.wasm
+WASM_Module_BitsAndDroids.cpp(69,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(132,10): warning : unused variable 'hr' [-Wunused-variable]
+WASM_Module_BitsAndDroids.cpp(166,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/MSFS_WindowsTypes.h(129,21): message : expanded from macro 'CALLBACK'
+WASM_Module_BitsAndDroids.cpp(257,42): warning : result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+  In file included from WASM_Module_BitsAndDroids.cpp:1:
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7450,19): warning : unused function 'query_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7455,19): warning : unused function 'install_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7460,19): warning : unused function 'initialize_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7465,19): warning : unused function 'update_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7470,19): warning : unused function 'generate_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7475,19): warning : unused function 'draw_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7480,19): warning : unused function 'kill_routine_610' [-Wunused-function]
+  WASM_Module_BitsAndDroids.vcxproj -> E:\BitsAndDroids\WASM\Bits-and-Droids-WASM-module\MSFS\Release\WASM_Module_BitsAndDroids.wasm

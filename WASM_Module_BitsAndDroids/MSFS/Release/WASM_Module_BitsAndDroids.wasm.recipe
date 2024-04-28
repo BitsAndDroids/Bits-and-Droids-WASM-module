@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\Dave Riedel\source\repos\WASM_Module_BitsAndDroids\MSFS\Release\WASM_Module_BitsAndDroids.wasm</FullPath>
+      <FullPath>E:\BitsAndDroids\WASM\Bits-and-Droids-WASM-module\MSFS\Release\WASM_Module_BitsAndDroids.wasm</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
