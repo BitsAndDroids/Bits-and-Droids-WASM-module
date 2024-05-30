@@ -3,6 +3,7 @@
 #include <MSFS/MSFS_WindowsTypes.h>
 #include <fstream>
 #include <unistd.h>
+#include <wasi/libc.h>
 
 #include <iostream>
 #include <map>
@@ -105,15 +106,27 @@ void register_event(std::string event_message)
 	if(event.action_type == "output")
 	{
 		std::cout << "Adding event to outputs " << event.id << " " << event.action.c_str() << std::endl;
-		registeredWASMEvents.insert({ event.id, event });
-
+		if (registeredWASMEvents.count(event.id) > 0)
+		{
+			registeredWASMEvents[event.id] = event;
+		}
+		else {
+			registeredWASMEvents.insert({ event.id, event });
+		}
 		hr = SimConnect_AddToClientDataDefinition(hSimConnect, event.id,
 			event.offset, sizeof(FLOAT64),
 			event.update_every);
+		
 	} else
 	{
 		std::cout << "Adding event to inputs " << event.id << " " << event.action.c_str() << std::endl;
-		wasmEvents.insert({ event.id, event });
+		if(wasmEvents.count(event.id) > 0)
+		{
+			wasmEvents[event.id] = event;
+		} else
+		{
+			wasmEvents.insert({ event.id, event });
+		}
 	}
 }
 
@@ -199,10 +212,10 @@ void CALLBACK myDispatchHandler(SIMCONNECT_RECV* pData, DWORD cbData,
 			{
 				const int value = std::stoi(
 					stringReceived.substr(stringReceived.find(" "), std::string::npos));
-				const std::string tempString =
-					std::to_string(value) + " + " + event_found.action;
+				// const std::string tempString =
+				// 	std::to_string(value) + " + " + event_found.action;
 				std::cout << "Input id: " << event_found.id << " | Value: " << value << std::endl;
-				execute_calculator_code(tempString.c_str(), nullptr, nullptr, nullptr);
+				execute_calculator_code(event_found.action.c_str(), nullptr, nullptr, nullptr);
 				break;
 			}
 			else if (event_found.action_type == "axis")

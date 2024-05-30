@@ -9,75 +9,51 @@ C:\MSFS SDK\WASM\wasi-sysroot/include\stdint.h(49,9): message : previous definit
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(130,9): warning : 'UINT32_MAX' macro redefined [-Wmacro-redefined]
 C:\MSFS SDK\WASM\wasi-sysroot/include\stdint.h(50,9): message : previous definition is here
   In file included from WASM_Module_BitsAndDroids.cpp:1:
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6116,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6130,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6119,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6133,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6336,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6350,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6339,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6353,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6342,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6356,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6345,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6359,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6348,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6362,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6351,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6365,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6354,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6368,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6357,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6371,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6461,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6475,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6464,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6478,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6467,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6481,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6470,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6484,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6473,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6487,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6476,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(6490,17): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7056,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7070,14): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7169,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7183,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7170,5): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7184,5): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7171,12): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7185,12): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7201,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7215,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7202,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7216,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7203,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7204,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7205,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7206,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7207,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7208,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7209,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7210,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7211,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7212,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7213,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7214,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7217,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7217,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7218,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
@@ -101,23 +77,19 @@ C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7227,7): warning : '__stdcall' cal
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7228,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7229,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7231,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7230,5): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7232,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7231,5): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7232,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7233,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7233,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7234,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7235,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7236,12): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7236,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7237,12): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7237,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7238,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
@@ -125,68 +97,96 @@ C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7239,7): warning : '__stdcall' cal
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7240,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7241,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7241,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7242,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7243,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7244,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7244,5): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7245,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7245,5): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7246,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7246,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7247,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7248,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7249,19): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7249,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7250,22): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7250,12): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7251,12): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7252,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7253,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7254,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7255,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7256,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7257,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7258,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7259,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7260,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7261,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7261,10): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7263,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7262,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7264,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7263,19): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7265,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7264,22): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7437,2): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7192,38): message : expanded from macro 'FSLINKAGE'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7267,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7437,2): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7193,38): message : expanded from macro 'FSLINKAGE'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7270,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7445,10): warning : __declspec attribute 'dllexport' is not supported [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7273,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7274,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7275,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7277,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7278,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7279,7): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7451,2): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7206,38): message : expanded from macro 'FSLINKAGE'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7451,2): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7207,38): message : expanded from macro 'FSLINKAGE'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7459,10): warning : __declspec attribute 'dllexport' is not supported [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(33,36): message : expanded from macro 'DECLSPEC_EXPORT'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7450,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7464,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7455,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7469,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7460,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7474,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7465,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7479,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7470,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7484,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7475,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7489,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7480,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7494,13): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(40,17): message : expanded from macro 'FSAPI'
-  In file included from WASM_Module_BitsAndDroids.cpp:12:
+  In file included from WASM_Module_BitsAndDroids.cpp:13:
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(905,15): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/MSFS_WindowsTypes.h(129,21): message : expanded from macro 'CALLBACK'
-  In file included from WASM_Module_BitsAndDroids.cpp:12:
+  In file included from WASM_Module_BitsAndDroids.cpp:13:
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(907,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(908,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
@@ -369,20 +369,20 @@ C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(996,1): warning : '__stdcall' ca
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(997,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
-WASM_Module_BitsAndDroids.cpp(52,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(54,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(61,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(69,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(132,10): warning : unused variable 'hr' [-Wunused-variable]
-WASM_Module_BitsAndDroids.cpp(166,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+WASM_Module_BitsAndDroids.cpp(53,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(55,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(62,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(70,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(145,10): warning : unused variable 'hr' [-Wunused-variable]
+WASM_Module_BitsAndDroids.cpp(179,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/MSFS_WindowsTypes.h(129,21): message : expanded from macro 'CALLBACK'
-WASM_Module_BitsAndDroids.cpp(257,42): warning : result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+WASM_Module_BitsAndDroids.cpp(270,42): warning : result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
   In file included from WASM_Module_BitsAndDroids.cpp:1:
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7450,19): warning : unused function 'query_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7455,19): warning : unused function 'install_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7460,19): warning : unused function 'initialize_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7465,19): warning : unused function 'update_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7470,19): warning : unused function 'generate_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7475,19): warning : unused function 'draw_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7480,19): warning : unused function 'kill_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7464,19): warning : unused function 'query_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7469,19): warning : unused function 'install_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7474,19): warning : unused function 'initialize_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7479,19): warning : unused function 'update_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7484,19): warning : unused function 'generate_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7489,19): warning : unused function 'draw_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7494,19): warning : unused function 'kill_routine_610' [-Wunused-function]
   WASM_Module_BitsAndDroids.vcxproj -> E:\BitsAndDroids\WASM\Bits-and-Droids-WASM-module\MSFS\Release\WASM_Module_BitsAndDroids.wasm
