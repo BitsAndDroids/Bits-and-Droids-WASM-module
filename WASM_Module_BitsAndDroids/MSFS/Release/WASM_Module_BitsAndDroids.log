@@ -369,14 +369,14 @@ C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(996,1): warning : '__stdcall' ca
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(997,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
-WASM_Module_BitsAndDroids.cpp(53,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(55,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(50,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(56,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
 WASM_Module_BitsAndDroids.cpp(62,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(70,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(145,10): warning : unused variable 'hr' [-Wunused-variable]
-WASM_Module_BitsAndDroids.cpp(179,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+WASM_Module_BitsAndDroids.cpp(69,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(130,11): warning : unused variable 'hr' [-Wunused-variable]
+WASM_Module_BitsAndDroids.cpp(161,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/MSFS_WindowsTypes.h(129,21): message : expanded from macro 'CALLBACK'
-WASM_Module_BitsAndDroids.cpp(270,42): warning : result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+WASM_Module_BitsAndDroids.cpp(241,43): warning : result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
   In file included from WASM_Module_BitsAndDroids.cpp:1:
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7464,19): warning : unused function 'query_routine_610' [-Wunused-function]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7469,19): warning : unused function 'install_routine_610' [-Wunused-function]
