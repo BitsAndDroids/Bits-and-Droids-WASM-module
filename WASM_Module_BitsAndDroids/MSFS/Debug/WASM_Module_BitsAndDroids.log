@@ -1,11 +1,11 @@
 ﻿  WASM_Module_BitsAndDroids.cpp
   In file included from WASM_Module_BitsAndDroids.cpp:1:
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7445,10): warning : __declspec attribute 'dllexport' is not supported [-Wignored-attributes]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7459,10): warning : __declspec attribute 'dllexport' is not supported [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(33,36): message : expanded from macro 'DECLSPEC_EXPORT'
-  In file included from WASM_Module_BitsAndDroids.cpp:12:
+  In file included from WASM_Module_BitsAndDroids.cpp:13:
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(905,15): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/MSFS_WindowsTypes.h(129,21): message : expanded from macro 'CALLBACK'
-  In file included from WASM_Module_BitsAndDroids.cpp:12:
+  In file included from WASM_Module_BitsAndDroids.cpp:13:
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(907,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(908,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
@@ -188,20 +188,20 @@ C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(996,1): warning : '__stdcall' ca
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(997,1): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\SimConnect SDK\include\SimConnect.h(901,42): message : expanded from macro 'SIMCONNECTAPI'
-WASM_Module_BitsAndDroids.cpp(52,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(54,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(61,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(69,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
-WASM_Module_BitsAndDroids.cpp(138,10): warning : unused variable 'hr' [-Wunused-variable]
-WASM_Module_BitsAndDroids.cpp(172,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
+WASM_Module_BitsAndDroids.cpp(53,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(55,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(62,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(70,1): warning : 'static' is not permitted on a declaration of a type [-Wmissing-declarations]
+WASM_Module_BitsAndDroids.cpp(145,10): warning : unused variable 'hr' [-Wunused-variable]
+WASM_Module_BitsAndDroids.cpp(179,6): warning : '__stdcall' calling convention is not supported for this target [-Wignored-attributes]
 C:\MSFS SDK\WASM\include\MSFS/MSFS_WindowsTypes.h(129,21): message : expanded from macro 'CALLBACK'
-WASM_Module_BitsAndDroids.cpp(263,42): warning : result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+WASM_Module_BitsAndDroids.cpp(273,42): warning : result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
   In file included from WASM_Module_BitsAndDroids.cpp:1:
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7450,19): warning : unused function 'query_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7455,19): warning : unused function 'install_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7460,19): warning : unused function 'initialize_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7465,19): warning : unused function 'update_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7470,19): warning : unused function 'generate_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7475,19): warning : unused function 'draw_routine_610' [-Wunused-function]
-C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7480,19): warning : unused function 'kill_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7464,19): warning : unused function 'query_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7469,19): warning : unused function 'install_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7474,19): warning : unused function 'initialize_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7479,19): warning : unused function 'update_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7484,19): warning : unused function 'generate_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7489,19): warning : unused function 'draw_routine_610' [-Wunused-function]
+C:\MSFS SDK\WASM\include\MSFS/Legacy/gauges.h(7494,19): warning : unused function 'kill_routine_610' [-Wunused-function]
   WASM_Module_BitsAndDroids.vcxproj -> E:\BitsAndDroids\WASM\Bits-and-Droids-WASM-module\MSFS\Debug\WASM_Module_BitsAndDroids.wasm
